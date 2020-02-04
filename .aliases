@@ -1,0 +1,23 @@
+# Git
+
+alias gaa="git add -A"
+alias push="git push -h origin HEAD"
+alias glog="git log"
+alias gs="git status"
+alias gd="git diff"
+alias gm="git commit -m"
+alias gc="git checkout"
+alias gb="git checkout -b"
+alias gra="git remote add"
+alias gpu="git pull"
+alias gcl="git clone"
+alias gf="git reflog"
+
+# History
+alias hist="history"
+
+# Kill
+alias kill_port="fuser -n tcp -k $1"
+
+# Shortcuts
+alias dev=alias dl="cd ~/Development/"
