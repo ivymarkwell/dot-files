@@ -22,3 +22,12 @@ Just making life a little easier.
 - Postgres App
 - PSequel
 - Spotify
+- VSCode
+
+## Github SSH Connection Setup
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+cat ~/.ssh/id_rsa.pub
+```

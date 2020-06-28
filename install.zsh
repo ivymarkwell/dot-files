@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# TODO:
+# - Move config files back in their own files and `cp .config $HOME/.config` instead
+# - Add installs for VSCode extensions
+# - Move git aliases from .zshrc into .gitconfig
+
 echo "Installing Xcode command line tools and Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
@@ -65,3 +70,15 @@ echo -e "alias kill_port='fuser -n tcp -k $1'" >> ~/.zshrc
 
 echo -e "\n# Shortcuts" >> ~/.zshrc
 echo -e "alias dev=alias dl='cd ~/Development/'" >> ~/.zshrc
+
+echo "Setting up git config..."
+echo "What's your name?"
+
+read user_name
+
+git config --global user.name $user_name
+
+echo "What's your email?"
+
+read user_email
+git config --global user.email $user_emai
