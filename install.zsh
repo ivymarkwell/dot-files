@@ -1,21 +1,12 @@
 #!/bin/zsh
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Install Xcode command line tools and Homebrew.
+echo "Installing Xcode command line tools and Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# Make sure we’re using the latest Homebrew.
 brew update
-
-# Upgrade any already-installed formulae.
 brew upgrade
-
-# Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
-# Install packages
+echo "Installing Homebrew packages..."
 brew install asdf
 brew install coreutils curl git
 brew install elixir
@@ -28,11 +19,12 @@ brew install python
 brew install tig
 brew install yarn
 brew install zsh
-
-# Remove outdated versions from the cellar
 brew cleanup
 
-# Basic zsh setup
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Setting up basic .zshrc configuration..."
 echo -e "# Path to your oh-my-zsh installation." >> ~/.zshrc
 echo -e "export ZSH='/Users/ivymarkwell/.oh-my-zsh'" >> ~/.zshrc
 
@@ -45,13 +37,12 @@ echo -e "COMPLETION_WAITING_DOTS='true'" >> ~/.zshrc
 
 echo -e "\n# Plugins" >> ~/.zshrc
 echo -e "plugins=(asdf git mix npm tig vscode)" >> ~/.zshrc
-echo -e "export PATH=/usr/local/bin:$PATH" >> ~/.zshrc
 echo -e "source $ZSH/oh-my-zsh.sh" >> ~/.zshrc
 
 echo -e "\n# Add asdf to shell" >> ~/.zshrc
-echo -e echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
 
-# Add aliases
+echo "Adding aliases..."
 echo -e "\n# Git" >> ~/.zshrc
 echo -e "alias gaa='git add -A'" >> ~/.zshrc
 echo -e "alias gp='git push -u origin HEAD'" >> ~/.zshrc
