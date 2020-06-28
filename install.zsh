@@ -3,6 +3,7 @@
 # TODO:
 # - Add installs for VSCode extensions
 # - Move git aliases from .zshrc into .gitconfig
+# - Move HomeBrew into it's own file/simplify install script
 
 echo "Installing Xcode command line tools and Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
